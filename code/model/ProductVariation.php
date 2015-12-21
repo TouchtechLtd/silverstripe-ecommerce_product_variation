@@ -629,7 +629,7 @@ class ProductVariation extends DataObject implements BuyableModel, EditableEcomm
 	 **/
 	public function OrderItem() {
 		//work out the filter
-		$filter = "";
+		$filter = array();
 		$updatedFilter = $this->extend('updateItemFilter', $filter);
 		if($updatedFilter!== null && is_array($updatedFilter) && count($updatedFilter)) {
 			$filter = $updatedFilter[0];
