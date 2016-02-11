@@ -402,10 +402,7 @@ class ProductVariation extends DataObject implements BuyableModel, EditableEcomm
 	 */
 	public function prepareFullFields(){
 		$fullName = "";
-		if($this->InternalItemID) {
-			$fullName .= $this->InternalItemID.": ";
-		}
-		$fullName .= $this->getTitle(false, true);
+		$fullName .= $this->getTitle(false, false);
 		if($product = $this->MainParentGroup()) {
 			$product->prepareFullFields();
 			$fullName .= " (".$product->FullName.")";
